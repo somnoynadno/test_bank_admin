@@ -11,4 +11,9 @@ RUN npm install react-scripts@3.4.1 -g --silent
 
 COPY . ./
 
-CMD ["npm", "start"]
+RUN react-scripts build
+RUN npm -g install serve
+
+CMD ["serve", "-s", "build", "-p", "7373"]
+EXPOSE 7373
+
