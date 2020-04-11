@@ -9,7 +9,9 @@ import { TestTaskList, TestTaskCreate, TestTaskEdit } from './pages/TestTask';
 import { VerdictStatusList, VerdictStatusCreate, VerdictStatusEdit } from './pages/VerdictStatus';
 import { VerdictList, VerdictCreate, VerdictEdit } from './pages/Verdict';
 import { ProgrammingLanguageList, ProgrammingLanguageCreate, ProgrammingLanguageEdit } from './pages/ProgrammingLanguage';
-import { ConfigList, ConfigCreate, ConfigEdit} from './pages/Config';
+import { ConfigList, ConfigCreate, ConfigEdit } from './pages/Config';
+import { TestTypeList, TestTypeCreate, TestTypeEdit } from './pages/TestType';
+import { TestCaseList, TestCaseCreate, TestCaseEdit } from './pages/TestCase';
 
 
 import {apiAddress} from "./Options";
@@ -24,6 +26,8 @@ const App = () => (
         <Resource name="verdict" list={VerdictList} create={VerdictCreate} edit={VerdictEdit} />
         <Resource name="programming_language" list={ProgrammingLanguageList} create={ProgrammingLanguageCreate} edit={ProgrammingLanguageEdit} />
         <Resource name="config" list={ConfigList} create={ConfigCreate} edit={ConfigEdit} />
+        <Resource name="test_type" list={TestTypeList} create={TestTypeCreate} edit={TestTypeEdit} />
+        <Resource name="test_case" list={TestCaseList} create={TestCaseCreate} edit={TestCaseEdit} />
     </Admin>
 );
 
