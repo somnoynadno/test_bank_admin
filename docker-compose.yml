@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  test_bank:
+    container_name: test_bank_admin
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 7373:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
