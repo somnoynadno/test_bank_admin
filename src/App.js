@@ -6,6 +6,8 @@ import jsonServerProvider from 'ra-data-json-server';
 
 import { CheckerList, CheckerCreate, CheckerEdit } from './pages/Checker';
 import { TestTaskList, TestTaskCreate, TestTaskEdit } from './pages/TestTask';
+import { VerdictStatusList, VerdictStatusCreate, VerdictStatusEdit } from './pages/VerdictStatus';
+import { VerdictList, VerdictCreate, VerdictEdit } from './pages/Verdict';
 
 import {apiAddress} from "./Options";
 
@@ -14,7 +16,9 @@ const dataProvider = jsonServerProvider(apiAddress);
 const App = () => (
     <Admin dataProvider={dataProvider}>
       <Resource name="checker" list={CheckerList} create={CheckerCreate} edit={CheckerEdit} />
-      <Resource name="test_task" list={TestTaskList} create={TestTaskCreate} edit={TestTaskEdit} />
+        <Resource name="test_task" list={TestTaskList} create={TestTaskCreate} edit={TestTaskEdit} />
+        <Resource name="verdict_status" list={VerdictStatusList} create={VerdictStatusCreate} edit={VerdictStatusEdit} />
+        <Resource name="verdict" list={VerdictList} create={VerdictCreate} edit={VerdictEdit} />
     </Admin>
 );
 

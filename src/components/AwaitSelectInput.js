@@ -15,11 +15,11 @@ export class AwaitSelectInput extends React.Component {
     }
 
     async getData() {
-        return await fetch(apiAddress + "/" + this.props.rel + "s/count")
+        return await fetch(apiAddress + "/" + this.props.countRel + "/count")
             .then(res => res.json())
             .then(
                 async (result) => {
-                    await fetch(apiAddress + "/"+ this.props.rel + "?_start=0&_end=" + result["amount"])
+                    await fetch(apiAddress + "/"+ this.props.fetchRel + "?_start=0&_end=" + result["amount"])
                         .then(res => res.json())
                         .then((res) => {
                             this.setState({
@@ -36,7 +36,7 @@ export class AwaitSelectInput extends React.Component {
 
     render() {
         return (
-            <SelectInput source="checker_id" optionText="name" choices={this.state.choices} />
+            <SelectInput source={this.props.source} optionText={this.props.optionText} choices={this.state.choices} />
         );
     }
 }

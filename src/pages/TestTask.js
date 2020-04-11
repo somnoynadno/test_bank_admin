@@ -34,7 +34,7 @@ export const TestTaskEdit = (props) => (
         <SimpleForm>
             <NumberInput source="test_task_number" />
             <BooleanInput source="is_interactive" />
-            <AwaitSelectInput source="checker_id" optionText="name" rel={"checker"} />
+            <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} countRel={"checkers"} />
             <NumberInput source="version" />
         </SimpleForm>
     </Edit>
