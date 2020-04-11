@@ -12,6 +12,9 @@ import { ProgrammingLanguageList, ProgrammingLanguageCreate, ProgrammingLanguage
 import { ConfigList, ConfigCreate, ConfigEdit } from './pages/Config';
 import { TestTypeList, TestTypeCreate, TestTypeEdit } from './pages/TestType';
 import { TestCaseList, TestCaseCreate, TestCaseEdit } from './pages/TestCase';
+import { TaskList, TaskCreate, TaskEdit } from './pages/Task';
+import { BaseTaskList, BaseTaskCreate, BaseTaskEdit } from './pages/BaseTask';
+import { SolutionList, SolutionCreate, SolutionEdit } from './pages/Solution';
 
 
 import {apiAddress} from "./Options";
@@ -28,6 +31,9 @@ const App = () => (
         <Resource name="config" list={ConfigList} create={ConfigCreate} edit={ConfigEdit} />
         <Resource name="test_type" list={TestTypeList} create={TestTypeCreate} edit={TestTypeEdit} />
         <Resource name="test_case" list={TestCaseList} create={TestCaseCreate} edit={TestCaseEdit} />
+        <Resource name="task" list={TaskList} create={TaskCreate} edit={TaskEdit} />
+        <Resource name="base_task" list={BaseTaskList} create={BaseTaskCreate} edit={BaseTaskEdit} />
+        <Resource name="solution" list={SolutionList} create={SolutionCreate} edit={SolutionEdit} />
     </Admin>
 );
 
