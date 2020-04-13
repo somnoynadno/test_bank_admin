@@ -1,11 +1,25 @@
 import React from 'react';
-import { Filter, List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput, BooleanField } from 'react-admin';
+import { Resource, Show, ShowButton, SimpleShowLayout, Filter, List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput, BooleanField } from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 const SolutionFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search by UUID" source="solution_uuid" alwaysOn />
     </Filter>
+);
+
+export const SolutionShow = (props) => (
+    <Show {...props}>
+        <SimpleShowLayout>
+            <DateField source="created_at" />
+            <NumberField source="task_id" />
+            <TextField multiline source="source_code" />
+            <BooleanField source="is_visible" />
+            <TextField source="log_path" />
+            <NumberField source="verdict_id" />
+            <NumberField source="programming_language_id" />
+        </SimpleShowLayout>
+    </Show>
 );
 
 export const SolutionList = (props) => (
@@ -15,14 +29,10 @@ export const SolutionList = (props) => (
             <DateField source="created_at" />
             <DateField source="updated_at" />
             <DateField source="deleted_at" />
-            <TextField source="solution_uuid" />
-            <TextField multiline source="source_code" />
-            <BooleanField source="is_visible" />
-            <TextField source="log_path" />
-            <NumberField source="verdict_id" />
-            <NumberField source="programming_language_id" />
             <NumberField source="task_id" />
-            <EditButton basePath="/solution" />
+            <TextField source="solution_uuid" />
+            <BooleanField source="is_visible" />
+            <ShowButton basePath="/solution" />
         </Datagrid>
     </List>
 );

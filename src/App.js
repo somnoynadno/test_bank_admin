@@ -14,15 +14,15 @@ import { TestTypeList, TestTypeCreate, TestTypeEdit } from './pages/TestType';
 import { TestCaseList, TestCaseCreate, TestCaseEdit } from './pages/TestCase';
 import { TaskList, TaskCreate, TaskEdit } from './pages/Task';
 import { BaseTaskList, BaseTaskCreate, BaseTaskEdit } from './pages/BaseTask';
-import { SolutionList, SolutionCreate, SolutionEdit } from './pages/Solution';
+import { SolutionList, SolutionCreate, SolutionEdit, SolutionShow } from './pages/Solution';
 
-
+import customRoutes from './customRoutes';
 import {apiAddress} from "./Options";
 
 const dataProvider = jsonServerProvider(apiAddress);
 
 const App = () => (
-    <Admin dataProvider={dataProvider}>
+    <Admin customRoutes={customRoutes} dataProvider={dataProvider}>
       <Resource name="checker" list={CheckerList} create={CheckerCreate} edit={CheckerEdit} />
         <Resource name="test_task" list={TestTaskList} create={TestTaskCreate} edit={TestTaskEdit} />
         <Resource name="verdict_status" list={VerdictStatusList} create={VerdictStatusCreate} edit={VerdictStatusEdit} />
@@ -33,7 +33,7 @@ const App = () => (
         <Resource name="test_case" list={TestCaseList} create={TestCaseCreate} edit={TestCaseEdit} />
         <Resource name="task" list={TaskList} create={TaskCreate} edit={TaskEdit} />
         <Resource name="base_task" list={BaseTaskList} create={BaseTaskCreate} edit={BaseTaskEdit} />
-        <Resource name="solution" list={SolutionList} create={SolutionCreate} edit={SolutionEdit} />
+        <Resource name="solution" list={SolutionList} create={SolutionCreate} edit={SolutionEdit} show={SolutionShow} />
     </Admin>
 );
 
