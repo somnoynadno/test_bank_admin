@@ -24,7 +24,7 @@ export const TestTaskCreate = (props) => (
             <NumberInput source="test_task_number" />
             <BooleanInput source="is_interactive" allowEmpty="false" />
             <NumberInput source="version" />
-            <AwaitSelectInput source="checker_id" optionText="name" rel={"checker"} />
+	    <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} countRel={"checkers"} />
         </SimpleForm>
     </Create>
 );
