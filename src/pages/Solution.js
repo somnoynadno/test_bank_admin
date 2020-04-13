@@ -1,9 +1,15 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput, BooleanField } from 'react-admin';
+import { Filter, List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput, BooleanField } from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
+const SolutionFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search by UUID" source="solution_uuid" alwaysOn />
+    </Filter>
+);
+
 export const SolutionList = (props) => (
-    <List {...props}>
+    <List filters={<SolutionFilter />} {...props}>
         <Datagrid>
             <TextField source="id" />
             <DateField source="created_at" />
