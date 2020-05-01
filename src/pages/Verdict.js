@@ -1,5 +1,17 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    TextInput,
+    NumberInput,
+    required
+} from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const VerdictList = (props) => (
@@ -23,7 +35,7 @@ export const VerdictCreate = (props) => (
             <NumberInput source="failed_test" />
             <TextInput source="compilation_log" />
             <TextInput source="results" />
-            <AwaitSelectInput source="verdict_status_id" optionText="status" fetchRel={"verdict_status"} />
+            <AwaitSelectInput source="verdict_status_id" optionText="status" fetchRel={"verdict_status"} validate={required()} />
         </SimpleForm>
     </Create>
 );
@@ -34,7 +46,7 @@ export const VerdictEdit = (props) => (
             <NumberInput source="failed_test" />
             <TextInput source="compilation_log" />
             <TextInput source="results" />
-            <AwaitSelectInput source="verdict_status_id" optionText="status" fetchRel={"verdict_status"}/>
+            <AwaitSelectInput source="verdict_status_id" optionText="status" fetchRel={"verdict_status"} validate={required()} />
         </SimpleForm>
     </Edit>
 );

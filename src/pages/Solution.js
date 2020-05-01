@@ -15,7 +15,8 @@ import {
     NumberField,
     BooleanInput,
     BooleanField,
-    EditButton
+    EditButton,
+    required
 } from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
@@ -57,13 +58,13 @@ export const SolutionList = (props) => (
 export const SolutionCreate = (props) => (
     <Create title="Create a Solution" {...props}>
         <SimpleForm>
-            <TextInput source="solution_uuid" />
-            <TextInput multiline source="source_code" />
-            <BooleanInput source="is_visible" />
+            <TextInput source="solution_uuid" validate={required()} />
+            <TextInput multiline source="source_code" validate={required()} />
+            <BooleanInput source="is_visible" defaultValue={true} validate={required()} />
             <TextInput source="log_path" />
-            <AwaitSelectInput source="task_id" optionText="task_number" fetchRel={"task"} />
-            <AwaitSelectInput source="programming_language_id" optionText="name" fetchRel={"programming_language"} />
-            <AwaitSelectInput source="verdict_id" optionText="id" fetchRel={"verdict"} />
+            <AwaitSelectInput source="task_id" optionText="task_number" fetchRel={"task"} validate={required()} />
+            <AwaitSelectInput source="programming_language_id" optionText="name" fetchRel={"programming_language"} validate={required()}/>
+            <AwaitSelectInput source="verdict_id" optionText="id" fetchRel={"verdict"} validate={required()} />
         </SimpleForm>
     </Create>
 );
@@ -71,12 +72,12 @@ export const SolutionCreate = (props) => (
 export const SolutionEdit = (props) => (
     <Edit title={"Edit Solution"} {...props}>
         <SimpleForm>
-            <TextInput multiline source="source_code" />
-            <BooleanInput source="is_visible" />
+            <TextInput multiline source="source_code" validate={required()} />
+            <BooleanInput source="is_visible" validate={required()} />
             <TextInput source="log_path" />
-            <AwaitSelectInput source="task_id" optionText="task_number" fetchRel={"task"} />
-            <AwaitSelectInput source="programming_language_id" optionText="name" fetchRel={"programming_language"} />
-            <AwaitSelectInput source="verdict_id" optionText="id" fetchRel={"verdict"} />
+            <AwaitSelectInput source="task_id" optionText="task_number" fetchRel={"task"} validate={required()} />
+            <AwaitSelectInput source="programming_language_id" optionText="name" fetchRel={"programming_language"} validate={required()} />
+            <AwaitSelectInput source="verdict_id" optionText="id" fetchRel={"verdict"} validate={required()} />
         </SimpleForm>
     </Edit>
 );

@@ -1,5 +1,17 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, NumberField, NumberInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    NumberField,
+    NumberInput,
+    required
+} from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const TaskList = (props) => (
@@ -19,9 +31,9 @@ export const TaskList = (props) => (
 export const TaskCreate = (props) => (
     <Create title="Create a Task" {...props}>
         <SimpleForm>
-            <NumberInput source="price" />
-            <NumberInput source="task_number" />
-            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} />
+            <NumberInput source="price" validate={required()} />
+            <NumberInput source="task_number" validate={required()} />
+            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} validate={required()} />
         </SimpleForm>
     </Create>
 );
@@ -29,9 +41,9 @@ export const TaskCreate = (props) => (
 export const TaskEdit = (props) => (
     <Edit title={"Edit Task"} {...props}>
         <SimpleForm>
-            <NumberInput source="price" />
-            <NumberInput source="task_number" />
-            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} />
+            <NumberInput source="price" validate={required()} />
+            <NumberInput source="task_number" validate={required()} />
+            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} validate={required()} />
         </SimpleForm>
     </Edit>
 );

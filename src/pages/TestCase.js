@@ -1,5 +1,18 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, NumberInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    TextInput,
+    NumberField,
+    NumberInput,
+    required
+} from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const TestCaseList = (props) => (
@@ -20,11 +33,11 @@ export const TestCaseList = (props) => (
 export const TestCaseCreate = (props) => (
     <Create title="Create a TestCase" {...props}>
         <SimpleForm>
-            <NumberInput source="number" />
+            <NumberInput source="number" validate={required()}/>
             <TextInput multiline source="input" />
             <TextInput multiline source="output" />
-            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"}/>
-            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"}/>
+            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"} validate={required()} />
+            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"} validate={required()} />
         </SimpleForm>
     </Create>
 );
@@ -32,11 +45,11 @@ export const TestCaseCreate = (props) => (
 export const TestCaseEdit = (props) => (
     <Edit title={"Edit TestCase"} {...props}>
         <SimpleForm>
-            <NumberInput source="number" />
+            <NumberInput source="number" validate={required()} />
             <TextInput multiline source="input" />
             <TextInput multiline source="output" />
-            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"}/>
-            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"}/>
+            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"} validate={required()} />
+            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"} validate={required()}/>
         </SimpleForm>
     </Edit>
 );

@@ -1,5 +1,17 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    TextInput,
+    NumberInput,
+    required
+} from 'react-admin';
 
 export const CheckerList = (props) => (
     <List {...props}>
@@ -17,8 +29,8 @@ export const CheckerList = (props) => (
 export const CheckerCreate = (props) => (
     <Create title="Create a Checker" {...props}>
         <SimpleForm>
-            <TextInput source="name" />
-            <TextInput source="file_path" />
+            <TextInput source="name" validate={required()} />
+            <TextInput source="file_path" validate={required()} />
             <NumberInput source="version" />
         </SimpleForm>
     </Create>
@@ -27,8 +39,8 @@ export const CheckerCreate = (props) => (
 export const CheckerEdit = (props) => (
     <Edit title={"Edit Checker"} {...props}>
         <SimpleForm>
-            <TextInput source="name" />
-            <TextInput source="file_path" />
+            <TextInput source="name" validate={required()} />
+            <TextInput source="file_path" validate={required()} />
             <NumberInput source="version" />
         </SimpleForm>
     </Edit>

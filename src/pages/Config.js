@@ -1,5 +1,18 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, BooleanField, NumberInput, BooleanInput, NumberField } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    BooleanField,
+    NumberInput,
+    BooleanInput,
+    NumberField
+} from 'react-admin';
 
 export const ConfigList = (props) => (
     <List {...props}>

@@ -1,5 +1,16 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    TextInput,
+    required
+} from 'react-admin';
 
 
 export const TestTypeList = (props) => (
@@ -17,7 +28,7 @@ export const TestTypeList = (props) => (
 export const TestTypeCreate = (props) => (
     <Create title="Create a TestType" {...props}>
         <SimpleForm>
-            <TextInput source="type" />
+            <TextInput source="type" validate={required()}/>
         </SimpleForm>
     </Create>
 );
@@ -25,7 +36,7 @@ export const TestTypeCreate = (props) => (
 export const TestTypeEdit = (props) => (
     <Edit title={"Edit TestType"} {...props}>
         <SimpleForm>
-            <TextInput source="type" />
+            <TextInput source="type" validate={required()} />
         </SimpleForm>
     </Edit>
 );

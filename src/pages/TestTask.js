@@ -1,5 +1,18 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, BooleanField, BooleanInput, NumberInput } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    Edit,
+    Create,
+    SimpleForm,
+    DateField,
+    TextField,
+    EditButton,
+    BooleanField,
+    BooleanInput,
+    NumberInput,
+    required
+} from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const TestTaskList = (props) => (
@@ -20,11 +33,11 @@ export const TestTaskList = (props) => (
 export const TestTaskCreate = (props) => (
     <Create title="Create a TestTask" {...props}>
         <SimpleForm>
-            <NumberInput source="test_task_number" />
-            <BooleanInput source="is_interactive" allowEmpty="false" />
+            <NumberInput source="test_task_number" validate={required()} />
+            <BooleanInput source="is_interactive" allowEmpty="false" default={false} validate={required()} />
             <NumberInput source="version" />
-            <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} />
-            <AwaitSelectInput source="task_id" optionText="id" fetchRel={"task"} />
+            <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} validate={required()} />
+            <AwaitSelectInput source="task_id" optionText="id" fetchRel={"task"} validate={required()} />
         </SimpleForm>
     </Create>
 );
@@ -32,10 +45,10 @@ export const TestTaskCreate = (props) => (
 export const TestTaskEdit = (props) => (
     <Edit title={"Edit TestTask"} {...props}>
         <SimpleForm>
-            <NumberInput source="test_task_number" />
-            <BooleanInput source="is_interactive" />
-            <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} />
-            <AwaitSelectInput source="task_id" optionText="id" fetchRel={"task"} />
+            <NumberInput source="test_task_number" validate={required()} />
+            <BooleanInput source="is_interactive" validate={required()} />
+            <AwaitSelectInput source="checker_id" optionText="name" fetchRel={"checker"} validate={required()} />
+            <AwaitSelectInput source="task_id" optionText="id" fetchRel={"task"} validate={required()} />
             <NumberInput source="version" />
         </SimpleForm>
     </Edit>
