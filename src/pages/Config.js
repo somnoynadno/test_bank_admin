@@ -5,9 +5,7 @@ export const ConfigList = (props) => (
     <List {...props}>
         <Datagrid>
             <TextField source="id" />
-            <DateField source="created_at" />
             <DateField source="updated_at" />
-            <DateField source="deleted_at" />
             <NumberField source="time_limit" />
             <NumberField source="memory_limit" />
             <BooleanField source="is_default" />

@@ -1,2 +1,1 @@
-// export const apiAddress = "http://localhost:5000/api"
-export const apiAddress = 'http://somnoynadno.ru:7272/api'
+export const apiAddress = 'http://localhost:8000/api'

@@ -5,9 +5,7 @@ export const CheckerList = (props) => (
     <List {...props}>
         <Datagrid>
             <TextField source="id" />
-            <DateField source="created_at" />
             <DateField source="updated_at" />
-            <DateField source="deleted_at" />
             <TextField source="name" />
             <TextField source="file_path" />
             <TextField source="version" />

@@ -13,27 +13,24 @@ import { ConfigList, ConfigCreate, ConfigEdit } from './pages/Config';
 import { TestTypeList, TestTypeCreate, TestTypeEdit } from './pages/TestType';
 import { TestCaseList, TestCaseCreate, TestCaseEdit } from './pages/TestCase';
 import { TaskList, TaskCreate, TaskEdit } from './pages/Task';
-import { BaseTaskList, BaseTaskCreate, BaseTaskEdit } from './pages/BaseTask';
 import { SolutionList, SolutionCreate, SolutionEdit, SolutionShow } from './pages/Solution';
 
-import customRoutes from './customRoutes';
 import {apiAddress} from "./Options";
 
 const dataProvider = jsonServerProvider(apiAddress);
 
 const App = () => (
-    <Admin customRoutes={customRoutes} dataProvider={dataProvider}>
+    <Admin dataProvider={dataProvider}>
       <Resource name="checker" list={CheckerList} create={CheckerCreate} edit={CheckerEdit} />
-        <Resource name="test_task" list={TestTaskList} create={TestTaskCreate} edit={TestTaskEdit} />
-        <Resource name="verdict_status" list={VerdictStatusList} create={VerdictStatusCreate} edit={VerdictStatusEdit} />
-        <Resource name="verdict" list={VerdictList} create={VerdictCreate} edit={VerdictEdit} />
-        <Resource name="programming_language" list={ProgrammingLanguageList} create={ProgrammingLanguageCreate} edit={ProgrammingLanguageEdit} />
-        <Resource name="config" list={ConfigList} create={ConfigCreate} edit={ConfigEdit} />
-        <Resource name="test_type" list={TestTypeList} create={TestTypeCreate} edit={TestTypeEdit} />
-        <Resource name="test_case" list={TestCaseList} create={TestCaseCreate} edit={TestCaseEdit} />
-        <Resource name="task" list={TaskList} create={TaskCreate} edit={TaskEdit} />
-        <Resource name="base_task" list={BaseTaskList} create={BaseTaskCreate} edit={BaseTaskEdit} />
-        <Resource name="solution" list={SolutionList} create={SolutionCreate} edit={SolutionEdit} show={SolutionShow} />
+      <Resource name="config" list={ConfigList} create={ConfigCreate} edit={ConfigEdit} />
+      <Resource name="programming_language" list={ProgrammingLanguageList} create={ProgrammingLanguageCreate} edit={ProgrammingLanguageEdit} />
+      <Resource name="solution" list={SolutionList} create={SolutionCreate} edit={SolutionEdit} show={SolutionShow} />
+      <Resource name="task" list={TaskList} create={TaskCreate} edit={TaskEdit} />
+      <Resource name="test_case" list={TestCaseList} create={TestCaseCreate} edit={TestCaseEdit} />
+      <Resource name="test_task" list={TestTaskList} create={TestTaskCreate} edit={TestTaskEdit} />
+      <Resource name="test_type" list={TestTypeList} create={TestTypeCreate} edit={TestTypeEdit} />
+      <Resource name="verdict" list={VerdictList} create={VerdictCreate} edit={VerdictEdit} />
+      <Resource name="verdict_status" list={VerdictStatusList} create={VerdictStatusCreate} edit={VerdictStatusEdit} />
     </Admin>
 );
 

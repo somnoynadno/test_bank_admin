@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, NumberField, NumberInput } from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const TaskList = (props) => (
@@ -8,7 +8,6 @@ export const TaskList = (props) => (
             <TextField source="id" />
             <DateField source="created_at" />
             <DateField source="updated_at" />
-            <DateField source="deleted_at" />
             <NumberField source="price" />
             <NumberField source="task_number" />
             <NumberField source="config_id" />
@@ -22,7 +21,7 @@ export const TaskCreate = (props) => (
         <SimpleForm>
             <NumberInput source="price" />
             <NumberInput source="task_number" />
-            <AwaitSelectInput source="config_id" optionText="id" countRel={"configs"} fetchRel={"config"} />
+            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} />
         </SimpleForm>
     </Create>
 );
@@ -32,7 +31,7 @@ export const TaskEdit = (props) => (
         <SimpleForm>
             <NumberInput source="price" />
             <NumberInput source="task_number" />
-            <AwaitSelectInput source="config_id" optionText="id" countRel={"configs"} fetchRel={"config"} />
+            <AwaitSelectInput source="config_id" optionText="id" fetchRel={"config"} />
         </SimpleForm>
     </Edit>
 );

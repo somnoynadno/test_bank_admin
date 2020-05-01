@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, BooleanField, BooleanInput, SelectInput, NumberInput } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput } from 'react-admin';
 
 export const ProgrammingLanguageList = (props) => (
     <List {...props}>
@@ -7,7 +7,6 @@ export const ProgrammingLanguageList = (props) => (
             <TextField source="id" />
             <DateField source="created_at" />
             <DateField source="updated_at" />
-            <DateField source="deleted_at" />
             <TextField source="name" />
             <TextField source="version" />
             <EditButton basePath="/programming_language" />

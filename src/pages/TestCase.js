@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, BooleanInput, SelectInput, NumberInput } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, NumberField, NumberInput } from 'react-admin';
 import {AwaitSelectInput} from "../components/AwaitSelectInput";
 
 export const TestCaseList = (props) => (
@@ -8,7 +8,6 @@ export const TestCaseList = (props) => (
             <TextField source="id" />
             <DateField source="created_at" />
             <DateField source="updated_at" />
-            <DateField source="deleted_at" />
             <TextField multiline source="input" />
             <TextField multiline source="output" />
             <NumberField source="number" />
@@ -24,8 +23,8 @@ export const TestCaseCreate = (props) => (
             <NumberInput source="number" />
             <TextInput multiline source="input" />
             <TextInput multiline source="output" />
-            <AwaitSelectInput source="test_type_id" optionText="type" countRel={"test_types"} fetchRel={"test_type"}/>
-            <AwaitSelectInput source="test_task_id" optionText="test_task_number" countRel={"test_tasks"} fetchRel={"test_task"}/>
+            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"}/>
+            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"}/>
         </SimpleForm>
     </Create>
 );
@@ -36,8 +35,8 @@ export const TestCaseEdit = (props) => (
             <NumberInput source="number" />
             <TextInput multiline source="input" />
             <TextInput multiline source="output" />
-            <AwaitSelectInput source="test_type_id" optionText="type" countRel={"test_types"} fetchRel={"test_type"}/>
-            <AwaitSelectInput source="test_task_id" optionText="test_task_number" countRel={"test_tasks"} fetchRel={"test_task"}/>
+            <AwaitSelectInput source="test_type_id" optionText="type" fetchRel={"test_type"}/>
+            <AwaitSelectInput source="test_task_id" optionText="test_task_number" fetchRel={"test_task"}/>
         </SimpleForm>
     </Edit>
 );
